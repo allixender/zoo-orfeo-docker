@@ -1,7 +1,8 @@
+# ZOO-Project WPS with Orfeo toolbox [![Travis Build Status](https://travis-ci.org/allixender/zoo-orfeo-docker.svg)](https://travis-ci.org/allixender/zoo-orfeo-docker)
 
-# ZOO-Project WPS with Orfeo toolbox
+Docker Hub: https://hub.docker.com/r/allixender/zoo-orfeo-docker/builds/
 
-info:  http://www.zoo-project.org/docs/kernel/orfeotoolbox.html
+zoo-project info: http://www.zoo-project.org/docs/kernel/orfeotoolbox.html
 
 build script based on gist https://gist.github.com/allixender/2c7b6285efdb67c187a48bf79597170e
 
