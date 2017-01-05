@@ -26,10 +26,16 @@ export CMAKE_CXX_FLAGS=-fPIC
 export BUILD_ROOT=/opt/build
 export ZOO_BUILD_DIR=/opt/build/zoo-project
 export CGI_DIR=/usr/lib/cgi-bin
-export CGI_DATA_DIR=/usr/lib/cgi-bin/data
+export CGI_DATA_DIR=$CGI_DIR/data
+export CGI_TMP_DIR=$CGI_DATA_DIR/tmp
+export CGI_CACHE_DIR=$CGI_DATA_DIR/cache
+export WWW_DIR=/var/www/html
 
 mkdir -p $BUILD_ROOT \
   && mkdir -p $CGI_DIR \
+  && mkdir -p $CGI_DATA_DIR \
+  && mkdir -p $CGI_TMP_DIR \
+  && mkdir -p $CGI_CACHE_DIR \
   && ln -s /usr/lib/x86_64-linux-gnu /usr/lib64
 
 wget -nv -O $BUILD_ROOT/mapserver-6.0.4.tar.gz http://download.osgeo.org/mapserver/mapserver-6.0.4.tar.gz \
@@ -154,5 +160,5 @@ rm -rf $BUILD_ROOT/InsightToolkit-4.7.2
 rm $BUILD_ROOT/InsightToolkit-4.7.2.tar.gz
 rm -rf $BUILD_ROOT/OTB-4.2.1
 rm $BUILD_ROOT/OTB-4.2.1.tgz
-rm -rf $ZOO_BUILD_DIR
-rm -rf $BUILD_ROOT/thirds
+# rm -rf $ZOO_BUILD_DIR
+# rm -rf $BUILD_ROOT/thirds
