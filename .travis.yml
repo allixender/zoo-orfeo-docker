@@ -22,7 +22,7 @@ before_script:
 install:
 
 script:
-- docker build -f Dockerfile -t $TRAVIS_REPO_SLUG:$TRAVIS_BUILD_NUMBER .
+- cd 0-mapserver-base && docker build -f Dockerfile -t $TRAVIS_REPO_SLUG:$TRAVIS_BUILD_NUMBER .
 
 branches:
   only:
