@@ -11,6 +11,7 @@ ENV WWW_DIR /var/www/html
 
 ADD build-script.sh /opt
 RUN chmod +x /opt/build-script.sh \
+  && sync \
   && /opt/build-script.sh
 
 # RUN rm -rf $WWW_DIR/*
