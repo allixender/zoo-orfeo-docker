@@ -15,15 +15,15 @@ env:
 before_install:
 - echo $LANG
 - echo $LC_ALL
-- test -n $CC && unset CC
+# - test -n $CC && unset CC
+
 before_script:
-- echo "install packages"
+
 install:
-- echo "make dependencies"
+
 script:
-- if [ $TRAVIS_OS_NAME == linux ]; then ./build-script.sh; fi
-after_success:
-- echo "make docker"
+- docker build -f Dockerfile -t $REPO:$COMMIT .
+
 branches:
   only:
   - master
