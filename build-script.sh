@@ -67,5 +67,7 @@ svn checkout http://svn.zoo-project.org/svn/trunk/zoo-project/ $ZOO_BUILD_DIR \
 apt-get remove --purge -y $BUILD_PACKAGES \
   && rm -rf /var/lib/apt/lists/*
 
+# clean up from base
+rm -rf $BUILD_ROOT/mapserver-6.0.4
 rm -rf $ZOO_BUILD_DIR
 # rm -rf $BUILD_ROOT/thirds
