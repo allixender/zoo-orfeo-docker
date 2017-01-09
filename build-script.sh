@@ -39,6 +39,12 @@ export WWW_DIR=/var/www/html
 #   && mkdir -p $CGI_CACHE_DIR \
 #   && ln -s /usr/lib/x86_64-linux-gnu /usr/lib64
 
+# ENV ITK_AUTOLOAD_PATH /usr/lib/otb/applications
+# echo /usr/lib/otb >> /etc/ld.so.conf.d/otb.conf
+
+echo /usr/lib/otb/applications >> /etc/ld.so.conf.d/otb.conf
+/sbin/ldconfig
+
 svn checkout http://svn.zoo-project.org/svn/trunk/zoo-project/ $ZOO_BUILD_DIR \
   && cd $ZOO_BUILD_DIR/zoo-kernel && autoconf \
   && LDFLAGS=-L/usr/lib/otb CPPFLAGS=-I/usr/include/otb ./configure --with-cgi-dir=$CGI_DIR \

@@ -10,6 +10,8 @@ MAINTAINER Alex K, allixender@googlemail.com
 # ENV CGI_# EACHE_DIR /usr/lib/cgi-bin/data/cache
 # ENV WWW_DIR /var/www/html
 
+ENV ITK_AUTOLOAD_PATH /usr/lib/otb/applications
+
 ADD build-script.sh /opt
 RUN chmod +x /opt/build-script.sh \
   && sync \
