@@ -41,9 +41,7 @@ export WWW_DIR=/var/www/html
 
 # ENV ITK_AUTOLOAD_PATH /usr/lib/otb/applications
 # echo /usr/lib/otb >> /etc/ld.so.conf.d/otb.conf
-
-echo /usr/lib/otb/applications >> /etc/ld.so.conf.d/otb.conf
-/sbin/ldconfig
+echo /usr/lib/otb/applications >> /etc/ld.so.conf.d/otb.conf && /sbin/ldconfig || exit 1
 
 svn checkout http://svn.zoo-project.org/svn/trunk/zoo-project/ $ZOO_BUILD_DIR \
   && cd $ZOO_BUILD_DIR/zoo-kernel && autoconf \
@@ -61,7 +59,7 @@ svn checkout http://svn.zoo-project.org/svn/trunk/zoo-project/ $ZOO_BUILD_DIR \
   --with-otb=/usr \
   --with-itk=/usr \
   --with-itk-version=4.7 \
-  && make && make install
+  && make && make install || exit 1
 
 
 # however, auto additonal packages won't get removed
